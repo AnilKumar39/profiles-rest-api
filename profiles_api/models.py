@@ -9,7 +9,10 @@ class UserProfileManager(BaseUserManager):
     def create_user(self,email,name,password=None):
         """ Create a new user profile """
         if not email:
-            raise valueError('Use must  have an email address')
+            raise
+
+
+        # OPTIMIZE: ]\alueError('Use must  have an email address')
         email = self.normalise_email(email)
         user = self.model(email=email,name=name)
 
